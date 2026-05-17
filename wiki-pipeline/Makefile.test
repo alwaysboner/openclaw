@@ -1,0 +1,30 @@
+# OpenClaw Wiki Pipeline v6.0 - TEST VERSION (first 3 batches)
+
+MONTH       ?= 2026-01
+WIKI_ROOT   := $(HOME)/.openclaw/wiki/main
+TRACES_DIR  := $(WIKI_ROOT)/transcripts/processed/traces
+PENDING_DIR := $(WIKI_ROOT)/promoted-pending
+MANIFEST    := $(WIKI_ROOT)/pages_manifest.json
+OPERATOR    ?= Gemini
+PYTHON      := ./.venv/bin/python3
+
+# Get the first 3 trace files for the given month
+TEST_FILES := $(shell find $(TRACES_DIR) -name 'trace_$(subst -,_,$(MONTH))_batch_*.json' | sort | head -n 3)
+
+.DEFAULT_GOAL := help
+
+help:
+	@echo "Usage: make -f Makefile.test <target>"
+	@echo "This is a TEST makefile that only runs on the first 3 batches."
+
+write:
+	$(PYTHON) stage_2_writer.py \
+	  --month $(MONTH) \
+	  --manifest $(MANIFEST) \
+	  --operator $(OPERATOR) \
+	  --traces-dir $(TRACES_DIR) \
+	  --pending-dir $(PENDING_DIR) \
+	  --test-files '$(TEST_FILES)'
+
+# Phony target to prevent file conflicts
+.PHONY: help write

@@ -1,0 +1,9 @@
+.venv/
+memory/
+uploads/
+openclaw-dashboard/
+openclaw-dashboard-clone/
+openclaw-dashboard-temp/
+*.html
+wiki-pipeline/__pycache__/
+wiki-pipeline/*.pyc

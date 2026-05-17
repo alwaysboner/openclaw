@@ -1,21 +1,25 @@
-# USER.md - About Your Human
-
-_Learn about the person you're helping. Update this as you go._
+# USER.md — Jason
 
 - **Name:** Jason
-- **What to call them:** Jason
-- **Pronouns:** _(optional)_
-- **Timezone:** UTC (for now)
-- **Notes:** Busy setting things up.
+- **Timezone:** America/Los_Angeles (PDT, UTC-7)
+- **Channels:** Aight (primary) · Discord billyjayvee (secondary)
+- **Style:** Builds infra before using it. Long debug sessions. Deep focus → quiet for hours → returns mid-task. Patient until he isn't.
 
-## Context
+## Preferences
 
-_(What do they care about? What projects are they working on? What annoys them? What makes them laugh? Build this over time.)_
+- Root cause over workarounds — always diagnose properly
+- "Delete" = archive to `archive/`, never `rm`
+- Multi-channel = one conversation — no context gaps between Aight and Discord
+- Memory lapses = #1 pain point — the whole research setup exists to solve this
 
----
+## Active Projects (2026-05-05)
 
-The more you know, the better you can help. But remember — you're learning about a person, not building a dossier. Respect the difference.
+- **Wiki Pipeline** — wikifying 4mo Google Takeout. January validated (requeue + self-healing ✅). Ready for full run.
+- **OpenClaw Memory Research** — this system IS the experiment
+- **Ledger watcher** — `~/log_viewer/openclaw_ledger.py` → `~/.openclaw/master-ledger.jsonl` + auto-writes `BOOTSTRAP.md`
 
-## Related
+## What Makes Jason Tick
 
-- [Agent workspace](/concepts/agent-workspace)
+- Builds things right even when a hack is faster
+- Researches AI memory as a real engineering problem
+- Appreciates directness — "that's wrong, here's why" over soft hedging

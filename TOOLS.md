@@ -1,44 +1,38 @@
-# TOOLS.md - Local Notes
+# TOOLS.md — Local Notes
+Skills define *how* tools work. This file is *your* specifics — unique to this machine.
+Full path index → PROJECT_MAP.md. Credentials → SENSITIVE_PATHS.md.
 
-Skills define _how_ tools work. This file is for _your_ specifics — the stuff that's unique to your setup.
+## Active Services
+| Service | Path | Port | Notes |
+|---------|------|------|-------|
+| LLM Council | `~/llm-council-vertex` | 5176 | FastAPI + Vite · run `start.sh` |
+| Ledger watcher | `~/log_viewer/openclaw_ledger.py` | — | Append-only ledger + BOOTSTRAP.md rebuild |
+| Observer server | `~/log_viewer/unified_observer.py` | 7842 | uvicorn/FastAPI |
+| WhatsApp Gateway | +17143346355 | — | connected |
 
-## What Goes Here
+## LCM Quick Reference
+- DB: `~/.openclaw/lcm.db` · slot: `contextEngine: lossless-claw` · v0.9.4
+- Tools: `lcm_grep` (search) · `lcm_describe` (inspect) · `lcm_expand_query` (deep recall)
+- Commands: `/lcm status` · `/lcm rotate` · `/lossless help`
+- WAL files present — do not delete DB
 
-Things like:
+## Reference Files (read on demand)
+| File | Key content |
+|------|-------------|
+| `PROJECT_MAP.md` | All paths, services, pipeline, wiki, DB locations |
+| `LCM.md` | Full LCM tools, commands, config keys |
+| `RUNTIME_STATUS.md` | Volatile machine state — regenerate before trusting |
+| `SENSITIVE_PATHS.md` | All credential paths — read only when required |
 
-- Camera names and locations
-- SSH hosts and aliases
-- Preferred voices for TTS
-- Speaker/room names
+## System
+- **Host:** `ip-172-26-11-178` (AWS Lightsail)
+- **User:** `ubuntu` · **Env:** `openclaw-env` — activate before scripts
+- **RAM:** 4 GB — monitor swap
+- **Wiki pipeline Makefile:** _(confirm next session — lost in truncation event)_
+
+## Local Notes
+_Append as discovered:_
+- Camera names / locations
+- TTS voice preferences
 - Device nicknames
-- Anything environment-specific
-
-## Examples
-
-```markdown
-### Cameras
-
-- living-room → Main area, 180° wide angle
-- front-door → Entrance, motion-triggered
-
-### SSH
-
-- home-server → 192.168.1.100, user: admin
-
-### TTS
-
-- Preferred voice: "Nova" (warm, slightly British)
-- Default speaker: Kitchen HomePod
-```
-
-## Why Separate?
-
-Skills are shared. Your setup is yours. Keeping them apart means you can update skills without losing your notes, and share skills without leaking your infrastructure.
-
----
-
-Add whatever helps you do your job. This is your cheat sheet.
-
-## Related
-
-- [Agent workspace](/concepts/agent-workspace)
+- API endpoints
